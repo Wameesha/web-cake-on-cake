@@ -17,7 +17,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="sticky top-0 z-50 bg-pink-100/80 backdrop-blur-xl shadow-lg border-b border-pink-200 rounded-b-2xl">
+        <nav className="sticky top-0 z-50 bg-pink-100/80 backdrop-blur-xl  rounded-b-2xl">
             <div className="max-w-4xl w-full mx-auto flex items-center justify-between px-6 py-4">
                 <span className="text-3xl font-extrabold tracking-wide flex items-center gap-2">
                     <span className="bg-gradient-to-r from-pink-300 via-pink-500 to-pink-200 bg-clip-text text-transparent drop-shadow-lg">🍰 Cake on Cake</span>
@@ -28,8 +28,7 @@ export default function Navbar() {
                             <a
                                 href={item.href}
                                 onClick={e => handleNavClick(e, item.href)}
-                                className="px-6 py-2 rounded-full font-semibold text-pink-700 bg-white/60 shadow-md hover:bg-pink-50 hover:text-pink-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pink-300"
-                                style={{ boxShadow: '0 2px 12px 0 rgba(255, 182, 193, 0.10)' }}
+                                className="px-6 py-2 rounded-full font-semibold text-pink-700 hover:text-pink-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pink-300"
                             >
                                 {item.label}
                             </a>

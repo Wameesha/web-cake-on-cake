@@ -1,24 +1,101 @@
 "use client";
 
-export default function Contact() {
-    return (
-        <section id="contact" className="w-full min-h-[600px] flex flex-col justify-center items-center bg-gradient-to-br from-pink-100 via-pink-200 to-white mb-0 pb-0 rounded-none" style={{ paddingBottom: 0 }}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 w-full max-w-5xl mx-auto items-stretch">
-                <div className="flex justify-center items-center p-8 md:p-0">
-                    <img src="/images/contactimage.png" alt="Contact" className="w-[340px] h-[340px] object-cover rounded-3xl" />
-                </div>
-                <div className="flex flex-col justify-center items-center pt-10 md:pt-16 pb-0">
-                    <h2 className="text-4xl font-extrabold bg-gradient-to-r from-pink-400 via-pink-600 to-pink-400 bg-clip-text text-transparent mb-8 drop-shadow">Get in Touch</h2>
-                    <form className="flex flex-col gap-6 w-full max-w-md">
-                        <input type="text" placeholder="Name" required className="px-5 py-4 rounded-xl border-2 border-pink-200 focus:border-pink-500 focus:outline-none bg-white/80 text-lg transition-all duration-200" />
-                        <input type="email" placeholder="Email" required className="px-5 py-4 rounded-xl border-2 border-pink-200 focus:border-pink-500 focus:outline-none bg-white/80 text-lg transition-all duration-200" />
-                        <input type="tel" placeholder="Contact Number" required className="px-5 py-4 rounded-xl border-2 border-pink-200 focus:border-pink-500 focus:outline-none bg-white/80 text-lg transition-all duration-200" />
-                        <textarea placeholder="Message" required className="px-5 py-4 rounded-xl border-2 border-pink-200 focus:border-pink-500 focus:outline-none bg-white/80 text-lg resize-none transition-all duration-200" rows={4} />
-                        <button type="submit" className="bg-gradient-to-r from-pink-500 via-pink-400 to-pink-300 text-white font-bold py-4 rounded-xl hover:scale-105 transition-all duration-200 mb-11">Send Message</button>
-                    </form>
-                </div>
-            </div>
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { motion } from "framer-motion";
 
-        </section>
-    );
+export default function Contact() {
+  return (
+  <section id="contact" className="w-full min-h-[100vh] bg-gradient-to-br from-[#fff0f6] via-[#ffe5ec] to-[#f8bbd0] flex items-center justify-center">
+      {/* Contact Info + Form */}
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 max-w-screen-2xl w-full mx-auto py-16 px-10 gap-16"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
+        {/* Left Side - Contact Info */}
+        <motion.div
+          className="flex flex-col justify-center gap-5"
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <h2 className="text-4xl font-bold text-pink-700">Contact Us</h2>
+          <p className="text-pink-900 leading-relaxed text-xl">
+            We'd love to hear from you! Whether you have questions about our products, 
+            need assistance, or want to request a quote – we’re here to help.
+          </p>
+          <div className="flex items-center gap-3 text-pink-700 text-lg">
+            <MapPin className="w-5 h-5 text-pink-600" />
+            <span>Gopal Mansion, 28 Nabab Siraj Ud Daula Rd, Chittagong 4000</span>
+          </div>
+          <div className="flex items-center gap-3 text-pink-700">
+            <Phone className="w-5 h-5 text-pink-600" />
+            <span>01976-068446</span>
+          </div>
+          <div className="flex items-center gap-3 text-pink-700">
+            <Mail className="w-5 h-5 text-pink-600" />
+            <span>example@gmail.com</span>
+          </div>
+          <div className="flex items-center gap-3 text-pink-700">
+            <Clock className="w-5 h-5 text-pink-600" />
+            <span>Everyday Opening Time: 08:00 AM - 10:00 PM</span>
+          </div>
+  </motion.div>
+
+        {/* Right Side - Contact Form */}
+        <motion.div
+          className="relative bg-white shadow-md rounded-bl-full rounded-tl-full p-16 overflow-hidden"
+          style={{backgroundImage: 'url(/images/cake3.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <div className="absolute inset-0 bg-white bg-opacity-80 z-0"></div>
+          <div className="relative z-10 w-full h-full flex flex-col justify-center items-center">
+          <form className="flex flex-col gap-5 w-full max-w-lg mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <input
+                type="text"
+                placeholder="First Name"
+                className="border border-gray-300 rounded-lg px-4 py-3 focus:border-pink-500 focus:outline-none"
+                required
+              />
+              <input
+                type="text"
+                placeholder="Last Name"
+                className="border border-gray-300 rounded-lg px-4 py-3 focus:border-pink-500 focus:outline-none"
+                required
+              />
+            </div>
+            <input
+              type="email"
+              placeholder="Email"
+              className="border border-gray-300 rounded-lg px-4 py-3 focus:border-pink-500 focus:outline-none"
+              required
+            />
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              className="border border-gray-300 rounded-lg px-4 py-3 focus:border-pink-500 focus:outline-none"
+              required
+            />
+            <textarea
+              placeholder="Message"
+              rows={4}
+              className="border border-gray-300 rounded-lg px-4 py-3 focus:border-pink-500 focus:outline-none resize-none"
+              required
+            ></textarea>
+            <button
+              type="submit"
+              className="bg-pink-600 text-white py-3 rounded-lg font-semibold hover:bg-pink-700 transition-all"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </motion.div>
+    </motion.div>
+  </section>
+  );
 }

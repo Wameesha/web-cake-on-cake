@@ -51,39 +51,68 @@ export default function Gallery() {
     }, []);
 
     return (
-        <main className="min-h-screen bg-gradient-to-br from-[#fff0f6] via-[#ffe5ec] to-[#f8bbd0] flex flex-col items-center py-16 px-4">
-            <section className="max-w-7xl w-full mx-auto">
-                <h2 className="text-4xl font-bold text-pink-700 mb-8 text-center">Cake Gallery</h2>
+        <main className="min-h-screen bg-gradient-to-br from-[#fff0f6] via-[#ffe5ec] to-[#f8bbd0] flex flex-col items-center py-16 px-0">
+            <section className="max-w-screen-2xl w-full mx-auto">
 
-                {/* Section 1: Recent Order with 360 Cake */}
-                <div className="mb-16 w-full min-h-[60vh] flex flex-col items-center justify-center">
+
+                {/* Section 1: Recent Order with 3 Columns */}
+                <div className="mb-16 w-full min-h-[100vh] flex flex-col items-center justify-center">
                     <h3 className="text-4xl font-bold text-pink-600 mb-10">Recent Order</h3>
-                    <div className="flex flex-row items-center justify-center gap-16 w-full">
-                        <div className="w-[32rem] h-[32rem] relative flex items-center justify-center">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full">
+                        {/* Cake Image */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.7 }}
+                            className="w-full h-[32rem] flex items-center justify-center"
+                        >
                             <img
                                 ref={cakeRef}
                                 src="/images/hero1.png"
                                 alt="Recent Order Cake"
                                 className="w-full h-full object-contain drop-shadow-2xl rounded-2xl"
                             />
-                        </div>
-                        <div className="w-[32rem] h-[32rem] relative flex items-center justify-center">
-                            <div className="bg-white bg-opacity-90 px-12 py-10 rounded-2xl shadow-2xl w-full h-full flex flex-col justify-center items-center">
-                                <h3 className="text-2xl font-bold mb-4 text-pink-700 text-center">Chocolate Dream Cake</h3>
-                                <p className="text-lg text-gray-700 leading-relaxed mb-6 text-center">A decadent chocolate cake with layers of rich ganache, topped with fresh berries. Custom made for a birthday celebration.</p>
-                                <div className="border-t border-pink-200 pt-4 mt-4 w-full">
-                                    <span className="block text-pink-600 font-semibold mb-2 text-center">Customer Review</span>
-                                    <p className="text-base text-gray-800 italic text-center">“Absolutely delicious! The cake was moist, rich, and beautifully decorated. Everyone at the party loved it. Will definitely order again!”<br />– Sarah K.</p>
+                        </motion.div>
+                        {/* Cake Info */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.7, delay: 0.1 }}
+                            className="w-full h-[32rem] flex items-center justify-center"
+                        >
+                            <div className="relative px-8 py-8 rounded-tl-full rounded-tr-full shadow-2xl w-full h-full flex flex-col justify-center items-center overflow-hidden" style={{backgroundImage: 'url(/images/cake4.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+                                <div className="absolute inset-0 bg-white bg-opacity-80 z-0"></div>
+                                <div className="relative z-10 w-full h-full flex flex-col justify-center items-center">
+                                    <h3 className="text-2xl font-bold mb-4 text-pink-600 text-center">Chocolate Dream Cake</h3>
+                                    <p className="text-lg text-pink-900 leading-relaxed mb-6 text-center">A decadent chocolate cake with layers of rich ganache, topped with fresh berries. Custom made for a birthday celebration.</p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
+                        {/* Customer Review */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.7, delay: 0.2 }}
+                            className="w-full h-[32rem] flex items-center justify-center"
+                        >
+                            <div className="relative px-8 py-8 rounded-tl-full rounded-tr-full rounded-bl-full shadow-2xl w-full h-full flex flex-col justify-center items-center overflow-hidden" style={{backgroundImage: 'url(/images/cake5.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+                                <div className="absolute inset-0 bg-white bg-opacity-80 z-0"></div>
+                                <div className="relative z-10 w-full h-full flex flex-col justify-center items-center">
+                                    <span className="block text-pink-600 font-semibold mb-2 text-center">Customer Review</span>
+                                    <p className="text-base text-pink-900 italic text-center">“Absolutely delicious! The cake was moist, rich, and beautifully decorated. Everyone at the party loved it. Will definitely order again!”<br />– Sarah K.</p>
+                                </div>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
 
                 {/* Section 2: Trending Cakes */}
-                <div className="mb-16 w-full min-h-[80vh] flex flex-col items-center justify-center">
-                    <h3 className="text-4xl font-bold text-pink-600 mb-20">Trending Cakes</h3>
-                    <div className="w-full flex flex-row items-end justify-center gap-12 relative" style={{ minHeight: "340px" }}>
+                <div className="mb-16 w-full min-h-[100vh] flex flex-col items-center justify-start">
+                    <h3 className="text-4xl font-bold text-pink-600 mb-20 mt-4">Trending Cakes</h3>
+                    <div className="w-full flex flex-row items-end justify-center gap-12 relative" style={{ minHeight: "500px" }}>
                         {getVisibleCakes().map((idx, pos) => (
                             <motion.div
                                 key={idx}
@@ -100,15 +129,15 @@ export default function Gallery() {
                                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                                 className={
                                     pos === 1
-                                        ? "flex flex-col items-center justify-center w-[22rem] h-[30rem]"
-                                        : "flex flex-col items-center justify-center w-[16rem] h-[20rem]"
+                                        ? "flex flex-col items-center justify-center w-[22rem] h-[40rem]"
+                                        : "flex flex-col items-center justify-center w-[16rem] h-[28rem]"
                                 }
-                                style={{ position: "absolute", left: `calc(50% - ${pos === 1 ? "11rem" : pos === 0 ? "20rem" : "-20rem"})` }}
+                                style={{ position: "absolute", left: `calc(50% - ${pos === 1 ? "11rem" : pos === 0 ? "38rem" : "-16rem"})` }}
                             >
                                 <img
                                     src={trendingCakes[idx].src}
                                     alt={trendingCakes[idx].alt}
-                                    className={pos === 1 ? "w-full h-80 mb-4" : "w-full h-48 mb-4"}
+                                    className={pos === 1 ? "w-full h-[30rem] mb-4 object-cover rounded-2xl" : "w-full h-[18rem] mb-4 object-cover rounded-2xl"}
                                 />
                                 <span className={pos === 1 ? "text-3xl font-extrabold text-pink-600 mb-2" : "text-xl font-bold text-pink-600 mb-2"}>{trendingCakes[idx].alt}</span>
                             </motion.div>
@@ -118,7 +147,7 @@ export default function Gallery() {
 
                 {/* Section 3: Cake Cards */}
                 <div className="mb-16 w-full min-h-[80vh] flex flex-col items-center justify-center">
-                    <h3 className="text-3xl font-bold text-pink-600 mb-8">Cake Cards</h3>
+
                     {/* Category Navbar */}
                     <nav className="mb-10 flex flex-row gap-4 justify-center w-full">
                         {categories.map(cat => (
@@ -135,15 +164,22 @@ export default function Gallery() {
                         {cakeCards
                             .filter(card => selectedCategory === "All" || card.category === selectedCategory)
                             .map((cake, i) => (
-                                <div key={i} className="rounded-2xl border-4 border-pink-200 flex flex-col items-center justify-center p-8 shadow-xl w-full h-[24rem]">
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, scale: 0.8, y: 40 }}
+                                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                    whileHover={{ scale: 1.07, boxShadow: "0 8px 32px 0 rgba(249, 161, 188, 0.25)" }}
+                                    viewport={{ once: true, amount: 0.3 }}
+                                    transition={{ duration: 0.6, delay: i * 0.08 }}
+                                    className="rounded-2xl border-4 border-pink-200 flex flex-col items-center justify-center p-8 shadow-xl w-full h-[24rem] cursor-pointer"
+                                >
                                     <img
                                         src={cake.src}
                                         alt={cake.alt}
                                         className="rounded-2xl object-cover w-full h-48 mb-4"
                                     />
                                     <span className="text-xl font-bold text-pink-600 mb-2">{cake.alt}</span>
-                                    <span className="text-lg font-bold text-pink-800 bg-pink-100 rounded-full px-4 py-1">{cake.price}</span>
-                                </div>
+                                </motion.div>
                             ))}
                     </div>
                 </div>

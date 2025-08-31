@@ -82,7 +82,7 @@ export default function Hero() {
             </div>
             <CakeToppersBackground />
             {/* Hero Section */}
-            <div className="max-w-6xl w-full mx-auto flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-20 relative z-10">
+            <div className="max-w-7xl w-full mx-auto flex flex-col md:flex-row items-center justify-between px-2 md:px-6 py-20 relative z-10">
                 {/* Left Content */}
                 <div className="md:w-1/2 text-center md:text-left">
                     <motion.span

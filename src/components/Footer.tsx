@@ -1,5 +1,6 @@
 import React from "react";
 import { Instagram, Facebook, Mail, Phone } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -15,6 +16,9 @@ export default function Footer() {
             </a>
             <a href="https://www.facebook.com/share/1K9PZ6EGu5/?mibextid=wwXIfr" target="_blank" rel="noopener" className="bg-pink-800 rounded-full p-2 shadow hover:bg-pink-700 transition">
               <Facebook className="w-6 h-6 text-pink-200" />
+            </a>
+            <a href="https://wa.me/94740400802?text=Hello!%20I%20would%20like%20to%20contact%20you%20regarding%20CakeOnCake." target="_blank" rel="noopener" className="bg-pink-800 rounded-full p-2 shadow hover:bg-pink-700 transition" title="Chat on WhatsApp">
+              <FaWhatsapp className="w-6 h-6 text-pink-200" />
             </a>
           </div>
         </div>

@@ -27,15 +27,15 @@ export default function Contact() {
           </p>
           <div className="flex items-center gap-3 text-pink-700 text-lg">
             <MapPin className="w-5 h-5 text-pink-600" />
-            <span>Gopal Mansion, 28 Nabab Siraj Ud Daula Rd, Chittagong 4000</span>
+            <span>No. 550, Pahalagama, Thiththawella</span>
           </div>
           <div className="flex items-center gap-3 text-pink-700">
             <Phone className="w-5 h-5 text-pink-600" />
-            <span>01976-068446</span>
+            <span>+94 (74) 040 0802</span>
           </div>
           <div className="flex items-center gap-3 text-pink-700">
             <Mail className="w-5 h-5 text-pink-600" />
-            <span>example@gmail.com</span>
+            <span>sandeepaniimasha1998@gmail.com</span>
           </div>
           <div className="flex items-center gap-3 text-pink-700">
             <Clock className="w-5 h-5 text-pink-600" />

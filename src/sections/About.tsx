@@ -125,7 +125,7 @@ export default function About() {
                 >
                     <h2 className="text-3xl font-bold text-pink-700 mb-4">Meet the Owner</h2>
                     <p className="text-lg text-gray-800 leading-relaxed mb-6">
-                        Hi, I&apos;m <span className="font-semibold text-pink-600">Wameesha</span>,
+                        Hi, I&apos;m <span className="font-semibold text-pink-600">Sandeepani Jayasingha</span>,
                         founder of <span className="font-semibold">CakeOnCake</span>!
                         My love for baking and creativity led me to start this journey,
                         where every cake is a <span className="italic">work of art</span>

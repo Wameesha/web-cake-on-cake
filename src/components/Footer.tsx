@@ -13,7 +13,7 @@ export default function Footer() {
             <a href="https://instagram.com" target="_blank" rel="noopener" className="bg-pink-800 rounded-full p-2 shadow hover:bg-pink-700 transition">
               <Instagram className="w-6 h-6 text-pink-200" />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener" className="bg-pink-800 rounded-full p-2 shadow hover:bg-pink-700 transition">
+            <a href="https://www.facebook.com/share/1K9PZ6EGu5/?mibextid=wwXIfr" target="_blank" rel="noopener" className="bg-pink-800 rounded-full p-2 shadow hover:bg-pink-700 transition">
               <Facebook className="w-6 h-6 text-pink-200" />
             </a>
           </div>
@@ -49,11 +49,11 @@ export default function Footer() {
           <h3 className="font-bold text-pink-100 mb-4 text-lg">Contact Us</h3>
           <div className="flex items-center gap-2 mb-2 text-pink-200">
             <Phone className="w-5 h-5 text-pink-300" />
-            <span>+91 98765 43210</span>
+            <span>+94 (74) 040 0802</span>
           </div>
           <div className="flex items-center gap-2 mb-2 text-pink-200">
             <Mail className="w-5 h-5 text-pink-300" />
-            <span>info@cakeoncake.com</span>
+            <span>sandeepaniimasha1998@gmail.com</span>
           </div>
           <div className="flex items-center gap-2 mb-2 text-pink-200">
             <span className="font-semibold">Hours:</span>
@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-2 mb-2 text-pink-200">
             <span className="font-semibold">Location:</span>
-            <span>123 Cake Street, Sweet City</span>
+            <span>No.550,Pahalagama,Thiththawella</span>
           </div>
         </div>
       </div>

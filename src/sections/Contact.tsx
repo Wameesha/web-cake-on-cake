@@ -22,7 +22,7 @@ export default function Contact() {
         >
           <h2 className="text-4xl font-bold text-pink-700">Contact Us</h2>
           <p className="text-pink-900 leading-relaxed text-xl">
-            We'd love to hear from you! Whether you have questions about our products, 
+            We&apos;d love to hear from you! Whether you have questions about our products, 
             need assistance, or want to request a quote – we’re here to help.
           </p>
           <div className="flex items-center gap-3 text-pink-700 text-lg">
